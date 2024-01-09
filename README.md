@@ -15,5 +15,6 @@ Sass Journal Project To Test Django and Python
 '''
 python3 -m venv venv
 pip install -r requirements-dev.txt
+pip-compile requirements-dev.in
 
 '''
