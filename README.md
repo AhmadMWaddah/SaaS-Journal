@@ -2,14 +2,15 @@
 Sass Journal Project To Test Django and Python
 
 # To Do List:
-* [ ] Dependencies.
-* [ ] Django Setup.
-* [ ] Configurations via django-environ.
-* [ ] Configure Web Server.
-* [ ] Testing Configurations.
-* [ ] Continuous Integrations / Pre-Commit.
-* [ ] Django Modeling.
-* [ ] Deployment Configurations.
+* [] Dependencies.
+* [] Django Setup.
+* [] Configurations via django-environ.
+* [] Configure Web Server.
+* [] Testing Configurations / Coverage.
+* [] Continuous Integrations.
+* [x] Pre-Commit.
+* [] Django Modeling.
+* [] Deployment Configurations.
 
 
 # Setups:
