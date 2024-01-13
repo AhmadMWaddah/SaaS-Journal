@@ -6,30 +6,17 @@
 #
 asgiref==3.7.2
     # via django
-cfgv==3.4.0
-    # via pre-commit
-distlib==0.3.8
-    # via virtualenv
 django==4.2.1
     # via -r requirements.in
-filelock==3.13.1
-    # via virtualenv
-identify==2.5.33
-    # via pre-commit
-nodeenv==1.8.0
-    # via pre-commit
-platformdirs==4.1.0
-    # via virtualenv
-pre-commit==3.6.0
+django-environ==0.11.2
     # via -r requirements.in
-pyyaml==6.0.1
-    # via pre-commit
+gunicorn==21.2.0
+    # via -r requirements.in
+packaging==23.2
+    # via gunicorn
+psycopg2-binary==2.9.9
+    # via -r requirements.in
 sqlparse==0.4.4
     # via django
 typing-extensions==4.9.0
     # via asgiref
-virtualenv==20.25.0
-    # via pre-commit
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools

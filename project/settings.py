@@ -1,13 +1,17 @@
 import os
 from pathlib import Path
 
+import environ
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure-7xlj-gzk7$6c5v7%=!uc=qvq)g@9dmc9lh$rw&vvcgzc$eke^3"
+env = environ.Env(DEBUG=(bool, False), ALLOWED_HOSTS=(list, []))
 
-DEBUG = True
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
-ALLOWED_HOSTS = []
+SECRET_KEY = env("SECRET_KEY")
+
+DEBUG = env("DEBUG")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -33,7 +37,9 @@ ROOT_URLCONF = "project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            os.path.join(BASE_DIR, "templates"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -49,15 +55,17 @@ TEMPLATES = [
 WSGI_APPLICATION = "project.wsgi.application"
 
 DATABASES = {
-    "ENGINE": "django.db.backends.postgresql",
-    "NAME": "saas_db",
-    "USER": "amw",
-    "PASSWORD": "123",
-    "HOST": "localhost",
-    "PORT": "",
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("DATABASE_NAME"),
+        "USER": env("DATABASE_USER"),
+        "PASSWORD": env("DATABASE_PASSWORD"),
+        "HOST": env("DATABASE_HOST"),
+        "PORT": "",
+    }
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
     # }
 }
 

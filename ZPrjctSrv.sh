@@ -26,11 +26,11 @@ function RUNSERVER() {
     python3 manage.py runserver 127.0.0.1:16000
     echo "----------------- Server Started Now. -----------------"
 }
-function TRADYPROJECT() {
+function SAASJOURNAL() {
 	POSTGRESQL
     FLAKE
     MAKEMIGRATIONS
     MIGRATE
     RUNSERVER
 }
-TRADYPROJECT
+SAASJOURNAL
