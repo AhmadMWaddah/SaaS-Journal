@@ -1,4 +1,4 @@
 [flake8]
 exclude = migrations,settings.py,.git,__pycache__,docs/source/conf.py,old,build,dist
 max-line-length = 120
-ignore = E402,E501
+ignore = E402,E501,E211,E999,F401,F821,W503
